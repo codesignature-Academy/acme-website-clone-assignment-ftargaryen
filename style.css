@@ -127,7 +127,7 @@ nav ul li a {
 
 .hero-image img {
     position: relative;
-    width: 95%;
+    width: 350px;
     height: auto;
     border-radius: 10px;
     max-width: 100%; 
@@ -178,7 +178,7 @@ nav ul li a {
 }
 
 .card img {
-    width: 100%; 
+    width: 200px; 
     height: auto;
     margin-bottom: 10px;
 }
@@ -280,22 +280,26 @@ nav ul li a {
 #contact input,
 #contact textarea {
     padding: 15px;
-    border: none;
-    border-radius: 5px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
     font-size: 25px;
-    background-color: rgba(255, 255, 255, 0.9);
-    color: #333;
+    background-color:black;
+    color: aliceblue;
 }
 
 #contact button {
-    padding: 10px;
+    padding: 7px;
     background-color: #146f6a;
     color: white;
     border: none;
     border-radius: 5px;
-    font-size: 1.1em;
+    /* font-size: 1.1em; */
     cursor: pointer;
     transition: background-color 0.3s;
+}
+
+#contact button{
+    width: 40%;
 }
 
 #contact button:hover {
@@ -326,7 +330,7 @@ footer .container {
     width: 100%;
     max-width: 800px;
     flex-wrap: wrap; 
-    gap: 20px;
+    gap: 14px;
 }
 
 .company-info h3 {
@@ -357,23 +361,162 @@ footer p:last-of-type {
     font-size: 0.9em;
     opacity: 0.8;
 }
+footer p {
+    font-style: italic; 
+    line-height: 1.4; 
+}
+.company-info p {
+    text-align: left;
+}
 /* end footer */
 
 /* Media Queries for Mobile (max-width: 768px) */
+.menu-btn{
+    display: none;
+}
+@media screen and (max-width: 426px) {
+    .navs{
+            display: none;
+    }
+    .navs.active{
+        display: block;
+
+    }
+    .menu-btn{
+        display: block;
+        font-size: 40px;
+        color: white;
+    }
+
+     nav ul.navs {
+        position: absolute;
+        top: 77px;
+        left: 0;
+        width: 100vw;
+        background-color: #146f6a; 
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 20px 0;
+        margin: 0; 
+        z-index: 999; 
+        transition: opacity 0.3s ease; 
+        opacity: 0;
+        visibility: hidden;
+    }
+    nav ul.navs.active {
+        display: flex; 
+        opacity: 1;
+        visibility: visible;
+    }
+    nav ul.navs li {
+        width: 100%;
+        text-align: center;
+        margin: 10px 0;
+    }
+    nav ul.navs li a {
+        font-size: 18px;
+        padding: 10px;
+        display: block; 
+    }
+    .container{
+        flex-direction: column-reverse;
+    }
+    .hero-image{
+        width: 170px;
+        margin-bottom: 30px;
+    }
+    .hero-content{
+        width: 70vw;
+        text-align: center;
+        justify-content: center;
+    }
+    .hero-content h2{
+        font-size: 30px;}
+    .hero-content p{
+        font-size: 16px;
+}
+.cards-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    transition: transform 0.3s ease;
+    width: screen-width;
+    gap: 20px;
+    justify-content: center;
+}
+.card img{
+    width: 100px;
+}
+#testimonials {
+    width: 100vw;
+    height: auto;
+    margin-bottom: 30px;
+}
+.testimonial {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    height: 250px;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
+    max-width: 100%;
+    gap: 20px;
+}
+
+.testimonial blockquote {
+    font-style: italic;
+    margin-bottom: 10px;
+    color: white;
+    font-size: 16px; 
+    line-height: 1.4;
+}
+
+.testimonial p {
+    font-size: 13px;
+    font-weight: bold;
+    color: gold;
+}
+#contact input,
+#contact textarea {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    font-size: 15px;
+    background-color: black;
+    color: #333;
+}
+
+.company-info p {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap; 
+    gap: 20px;
+    text-align: center;
+}
+.footer-content{
+    
+}
+}
+
+    
+/*     
+}
 @media (max-width: 768px) {
     body {
         width: 100vw; 
         padding-top: 77px;
     }
 
-    /* Header/Nav Mobile */
+    
     nav h1 {
         font-size: 24px;
     }
 
     nav ul {
         position: absolute;
-        top: 77px; /* Below header */
+        top: 77px; 
         left: 0;
         width: 100vw;
         background-color: #146f6a;
@@ -409,7 +552,7 @@ footer p:last-of-type {
         display: block;
     }
 
-    /* Hero Mobile: Stack vertically */
+   
     #hero .container {
         flex-direction: column;
         text-align: center;
@@ -425,7 +568,7 @@ footer p:last-of-type {
     }
 
     .hero-content h2 {
-        font-size: 40px; /* Smaller on mobile */
+        font-size: 40px;
         text-align: center;
     }
 
@@ -435,7 +578,7 @@ footer p:last-of-type {
     }
 
     .hero-image img {
-        width: 80%; /* Adjust image size */
+        width: 80%; 
     }
 
 
@@ -467,7 +610,7 @@ footer p:last-of-type {
         font-size: 1.1em; 
     }
 
-    /* Footer Mobile: */
+   
     .footer-content {
         flex-direction: column;
         align-items: center;
@@ -478,13 +621,13 @@ footer p:last-of-type {
         gap: 10px;
     }
 
-    /* Contact: Full width */
+   
     #contact form {
         width: 90%;
     }
 }
 
-/* Smaller screens */
+
 @media (max-width: 480px) {
     .hero-content h2 {
         font-size: 32px;
@@ -503,4 +646,4 @@ footer p:last-of-type {
     .card img {
         width: 50%;
     }
-}
+} */
